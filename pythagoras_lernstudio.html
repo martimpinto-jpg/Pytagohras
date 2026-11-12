@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pythagoras-Labor | Mathematik üben</title>
+<style>
+:root{--ink:#17243b;--muted:#68758b;--blue:#4263eb;--cyan:#36cfc9;--purple:#805ad5;--bg:#f4f7ff;--card:#fff;--line:#e7ebf4;--good:#16845b;--bad:#d9485f;--shadow:0 18px 50px rgba(37,55,100,.09)}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 10% 0%,#e6edff 0,transparent 30%),radial-gradient(circle at 90% 10%,#e3fbf7 0,transparent 26%),var(--bg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink)}
+header{max-width:1180px;margin:auto;padding:26px 24px 14px;display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{display:flex;align-items:center;gap:12px;font-weight:850;font-size:1.12rem}.logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--purple));display:grid;place-items:center;color:white;font-size:23px;box-shadow:0 8px 18px #4263eb44}.top-pill{background:#fff;border:1px solid var(--line);padding:9px 14px;border-radius:99px;color:var(--muted);font-size:.86rem}
+main{max-width:1180px;margin:auto;padding:12px 24px 60px}.hero{background:linear-gradient(115deg,#233d91,#4263eb 55%,#7258d6);border-radius:28px;padding:36px;color:white;position:relative;overflow:hidden;box-shadow:0 20px 45px #3552b633}.hero:after{content:"a² + b² = c²";position:absolute;right:3%;top:25px;font-size:clamp(2.2rem,6vw,5rem);font-weight:900;color:#ffffff19;transform:rotate(-8deg);white-space:nowrap}.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:800;color:#cbd7ff}.hero h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.04;margin:12px 0}.hero p{max-width:600px;color:#e5eaff;line-height:1.6;margin:0}.formula{display:inline-block;margin-top:22px;background:#ffffff1c;border:1px solid #ffffff45;padding:12px 20px;border-radius:14px;font-size:1.45rem;font-weight:850;letter-spacing:.04em}
+.layout{display:grid;grid-template-columns:280px 1fr;gap:22px;margin-top:22px}.sidebar,.panel,.stat{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}.sidebar{padding:18px;height:max-content}.side-title{font-size:.75rem;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.12em;margin:4px 10px 12px}.navbtn{width:100%;border:0;background:transparent;text-align:left;padding:13px 12px;border-radius:13px;color:#526078;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:10px;margin:3px 0}.navbtn.active,.navbtn:hover{background:#eef2ff;color:var(--blue)}.navicon{font-size:1.15rem;width:24px;text-align:center}.side-note{margin-top:20px;padding:15px;background:#f2fbfa;border-radius:15px;color:#3b6c68;font-size:.86rem;line-height:1.5}
+.content{min-width:0}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}.stat{padding:16px 18px}.stat small{color:var(--muted);font-weight:700}.stat strong{display:block;font-size:1.55rem;margin-top:5px}.panel{padding:25px}.section-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:18px}.section-head h2{margin:0;font-size:1.4rem}.section-head p{margin:6px 0 0;color:var(--muted);line-height:1.5}.tag{background:#edf1ff;color:var(--blue);font-size:.75rem;font-weight:800;padding:7px 10px;border-radius:99px;white-space:nowrap}
+.explain-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}.info{background:#f7f9ff;border:1px solid var(--line);border-radius:17px;padding:18px;line-height:1.65}.info h3{margin:0 0 8px}.triangle-wrap{background:linear-gradient(145deg,#f0f5ff,#f1fffc);border-radius:18px;display:grid;place-items:center;padding:15px;min-height:245px}.triangle-wrap svg{width:100%;max-width:330px}.formula-line{font-size:1.2rem;font-weight:850;color:var(--blue);text-align:center;margin-top:12px}
+.controls{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0}.chip{border:1px solid var(--line);background:white;padding:9px 13px;border-radius:99px;font-weight:750;color:#58657a;cursor:pointer}.chip.selected{background:#edf1ff;border-color:#bdc9ff;color:var(--blue)}button{font:inherit}.primary,.secondary{border:0;border-radius:13px;padding:12px 17px;font-weight:800;cursor:pointer;transition:.18s}.primary{background:linear-gradient(120deg,var(--blue),var(--purple));color:#fff;box-shadow:0 8px 18px #4263eb33}.primary:hover{transform:translateY(-1px);filter:brightness(1.05)}.secondary{background:#eef2ff;color:var(--blue)}.question{margin-top:15px;border:1px solid var(--line);border-radius:18px;padding:20px;background:#fcfdff}.qtop{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:.83rem;font-weight:750}.question h3{font-size:1.25rem;line-height:1.45;margin:15px 0}.task-visual{display:flex;justify-content:center;background:#f5f8ff;border-radius:14px;padding:10px;margin:14px 0}.task-visual svg{width:100%;max-width:330px;height:175px}.answer-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.answer-row input{width:170px;border:1.5px solid #dce3f2;border-radius:12px;padding:13px 14px;font-size:1.05rem;outline:none}.answer-row input:focus{border-color:var(--blue);box-shadow:0 0 0 3px #4263eb18}.unit{color:var(--muted);font-weight:700}.feedback{margin-top:13px;padding:12px 14px;border-radius:12px;display:none;line-height:1.5}.feedback.good{display:block;background:#eaf8f1;color:#176a4b}.feedback.bad{display:block;background:#fff0f1;color:#a83248}.hint{margin-top:12px;color:var(--muted);font-size:.9rem;display:none;background:#fff9e9;padding:12px;border-radius:12px}.progress{height:9px;background:#edf0f7;border-radius:99px;overflow:hidden;margin-top:13px}.progress>div{height:100%;background:linear-gradient(90deg,var(--cyan),var(--blue));width:0%;transition:width .3s}
+.review-list{display:grid;gap:10px}.review-item{padding:13px 15px;border:1px solid var(--line);border-radius:13px;background:#fff;display:flex;justify-content:space-between;gap:12px}.muted{color:var(--muted)}.hidden{display:none!important}.footer{text-align:center;color:#8994a8;font-size:.82rem;margin:25px 0 0}
+@media(max-width:820px){.layout{grid-template-columns:1fr}.sidebar{display:flex;overflow:auto;gap:5px;padding:10px}.side-title,.side-note{display:none}.navbtn{white-space:nowrap;width:auto;margin:0}.explain-grid{grid-template-columns:1fr}.hero{padding:28px}.hero:after{opacity:.5}.stats{gap:8px}.stat{padding:13px}.stat strong{font-size:1.3rem}}
+@media(max-width:480px){header{padding:18px 16px}.top-pill{display:none}main{padding:8px 14px 40px}.hero{border-radius:20px;padding:24px 20px}.panel{padding:18px}.stats{grid-template-columns:repeat(3,1fr)}.stat small{font-size:.7rem}.answer-row input{flex:1;min-width:120px}}
+</style>
+</head>
+<body>
+<header><div class="brand"><div class="logo">△</div><span>Mathe<span style="color:var(--blue)">Studio</span></span></div><div class="top-pill">✦ Interaktiv lernen · Klasse 8–10</div></header>
+<main>
+<section class="hero"><div class="eyebrow">Geometrie · Lernmodul</div><h1>Das Pythagoras-<br>Labor</h1><p>Entdecke den Satz des Pythagoras, trainiere Schritt für Schritt und werde sicher im Rechnen mit rechtwinkligen Dreiecken.</p><div class="formula">a² + b² = c²</div></section>
+<div class="layout">
+<aside class="sidebar">
+<div class="side-title">Dein Lernbereich</div>
+<button class="navbtn active" data-page="learn"><span class="navicon">📘</span>Verstehen</button>
+<button class="navbtn" data-page="practice"><span class="navicon">✏️</span>Üben</button>
+<button class="navbtn" data-page="word"><span class="navicon">🌍</span>Textaufgaben</button>
+<button class="navbtn" data-page="review"><span class="navicon">🔁</span>Fehlertraining</button>
+<div class="side-note">💡 <b>Merke:</b> Die Hypotenuse liegt immer gegenüber vom rechten Winkel und ist die längste Seite.</div>
+</aside>
+<div class="content">
+<div class="stats"><div class="stat"><small>⭐ Punkte</small><strong id="points">0</strong></div><div class="stat"><small>✓ Richtig</small><strong id="correct">0</strong></div><div class="stat"><small>🔥 Serie</small><strong id="streak">0</strong></div></div>
+<section id="learn" class="panel page">
+<div class="section-head"><div><h2>Der Satz des Pythagoras</h2><p>So hängen die drei Seiten eines rechtwinkligen Dreiecks zusammen.</p></div><span class="tag">LERNEN</span></div>
+<div class="explain-grid">
+<div class="info"><h3>Was sagt der Satz?</h3>In jedem <b>rechtwinkligen Dreieck</b> ist die Summe der Quadrate der beiden Katheten gleich dem Quadrat der Hypotenuse.<p><b>Katheten:</b> Die Seiten a und b bilden den rechten Winkel.</p><p><b>Hypotenuse:</b> Die längste Seite c liegt gegenüber vom rechten Winkel.</p><div class="formula-line">a² + b² = c²</div></div>
+<div class="triangle-wrap"><svg viewBox="0 0 330 235" role="img" aria-label="Rechtwinkliges Dreieck mit Katheten a und b und Hypotenuse c"><polygon points="55,190 55,35 270,190" fill="#dce8ff" stroke="#4263eb" stroke-width="4"/><path d="M55 170 H75 V190" fill="none" stroke="#805ad5" stroke-width="3"/><text x="38" y="115" fill="#3154c8" font-size="18" font-weight="bold">a</text><text x="160" y="215" fill="#3154c8" font-size="18" font-weight="bold">b</text><text x="174" y="102" fill="#805ad5" font-size="18" font-weight="bold">c</text><text x="67" y="178" fill="#805ad5" font-size="12">90°</text></svg></div>
+</div>
+<div class="info" style="margin-top:16px"><h3>So stellst du die Formel um</h3><p>Gesucht ist die Hypotenuse: <b>c = √(a² + b²)</b></p><p>Gesucht ist eine Kathete: <b>a = √(c² − b²)</b> oder <b>b = √(c² − a²)</b></p><p class="muted" style="margin-bottom:0">Beispiel: a = 3 cm und b = 4 cm → c = √(9 + 16) = √25 = <b>5 cm</b>.</p></div>
+<button class="primary" style="margin-top:18px" onclick="showPage('practice')">Jetzt Aufgaben lösen →</button>
+</section>
+<section id="practice" class="panel page hidden">
+<div class="section-head"><div><h2>Aufgaben-Training</h2><p>Wähle einen Bereich und löse so viele Aufgaben, wie du möchtest.</p></div><span class="tag">TRAINING</span></div>
+<div class="controls" id="modes"><button class="chip selected" data-mode="all">Gemischt</button><button class="chip" data-mode="hyp">Hypotenuse c</button><button class="chip" data-mode="leg">Kathete a/b</button><button class="chip" data-mode="easy">Leicht</button><button class="chip" data-mode="hard">Knifflig</button></div>
+<div class="question"><div class="qtop"><span id="qnumber">AUFGABE 1</span><span id="qtype">GEMISCHT</span></div><h3 id="questionText">Berechne die fehlende Seite.</h3><div class="task-visual" id="taskVisual"></div><div class="answer-row"><input id="answer" type="text" inputmode="decimal" placeholder="Deine Antwort" aria-label="Deine Antwort"><span class="unit">cm</span><button class="primary" id="checkBtn">Prüfen</button><button class="secondary" id="hintBtn">Tipp</button></div><div id="feedback" class="feedback"></div><div id="hint" class="hint"></div></div>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:17px;gap:10px"><span class="muted" style="font-size:.85rem" id="progressText">0 von 10 Aufgaben richtig</span><button class="secondary" id="nextBtn">Nächste Aufgabe →</button></div><div class="progress"><div id="progressBar"></div></div>
+</section>
+<section id="word" class="panel page hidden">
+<div class="section-head"><div><h2>Pythagoras im Alltag</h2><p>Löse Aufgaben mit Leitern, Wegen, Bildschirmen und mehr.</p></div><span class="tag">ANWENDEN</span></div>
+<div class="info"><h3>Deine Mission</h3><p>Hier brauchst du nicht nur die Formel, sondern musst zuerst erkennen, welche Seiten gegeben und welche gesucht sind. Runde auf eine Dezimalstelle, falls nötig.</p></div>
+<div class="question"><div class="qtop"><span id="wNumber">TEXTAUFGABE 1</span><span>ALLTAG</span></div><h3 id="wordText"></h3><div class="task-visual" id="wordVisual"></div><div class="answer-row"><input id="wordAnswer" type="text" inputmode="decimal" placeholder="Deine Antwort" aria-label="Antwort auf Textaufgabe"><span class="unit" id="wordUnit">m</span><button class="primary" id="wordCheck">Prüfen</button><button class="secondary" id="wordNext">Neue Aufgabe</button></div><div id="wordFeedback" class="feedback"></div></div>
+</section>
+<section id="review" class="panel page hidden">
+<div class="section-head"><div><h2>Fehlertraining</h2><p>Hier findest du Aufgaben, die du noch einmal üben kannst.</p></div><span class="tag">WIEDERHOLEN</span></div>
+<div id="reviewContent"><p class="muted">Noch keine Fehler gesammelt. Starte eine Übung und probiere es aus!</p></div>
+<button class="primary" id="retryBtn" style="margin-top:16px">Fehler nochmals üben</button>
+</section>
+</div></div>
+<div class="footer">MatheStudio · Üben, verstehen, besser werden ✦</div>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+let points=0,correct=0,streak=0,total=0,errors=[],current=null,mode='all',wordCurrent=null,wordIndex=0;
+function showPage(page){document.querySelectorAll('.page').forEach(x=>x.classList.add('hidden'));$(page).classList.remove('hidden');document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.page===page));if(page==='practice'&&!current)newQuestion();if(page==='word'&&!wordCurrent)newWord();}
+document.querySelectorAll('.navbtn').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+function updateStats(){$('points').textContent=points;$('correct').textContent=correct;$('streak').textContent=streak;$('progressText').textContent=correct+' richtige Antworten';$('progressBar').style.width=Math.min(100,correct/10*100)+'%';}
+function fmt(n){return Number.isInteger(n)?String(n):String(Number(n.toFixed(1))).replace('.',',')}
+function triangleSVG(a,b,c,unknown){return `<svg viewBox="0 0 330 190" aria-label="Rechtwinkliges Dreieck"><polygon points="55,155 55,25 265,155" fill="#dce8ff" stroke="#4263eb" stroke-width="3.5"/><path d="M55 137 H73 V155" fill="none" stroke="#805ad5" stroke-width="2.5"/><text x="34" y="95" fill="#3154c8" font-size="17" font-weight="bold">${unknown==='a'?'?':fmt(a)}</text><text x="153" y="179" fill="#3154c8" font-size="17" font-weight="bold">${unknown==='b'?'?':fmt(b)}</text><text x="175" y="78" fill="#805ad5" font-size="17" font-weight="bold">${unknown==='c'?'?':fmt(c)}</text><text x="68" y="147" fill="#805ad5" font-size="11">90°</text></svg>`}
+function generate(modePick=mode){
+ let type, a,b,c,answer,unknown,level;
+ const easy=modePick==='easy',hard=modePick==='hard';
+ if(modePick==='hyp'||(modePick==='all'&&Math.random()<.55)||easy||hard){
+  type='hyp';let pairs=hard?[[5,12],[8,15],[7,24],[9,12],[10,24]]:[[3,4],[5,12],[6,8],[8,15],[9,12],[5,5]];
+  [a,b]=pairs[Math.floor(Math.random()*pairs.length)];if(easy){let k=Math.floor(Math.random()*3)+1;a=3*k;b=4*k}
+  c=Math.sqrt(a*a+b*b);answer=c;unknown='c';level=hard?'Knifflig':'Hypotenuse';
+ }else{
+  type='leg';let triples=[[3,4,5],[5,12,13],[8,15,17],[7,24,25],[6,8,10]];[a,b,c]=triples[Math.floor(Math.random()*triples.length)];unknown=Math.random()<.5?'a':'b';if(unknown==='a'){answer=a;a='?'}else{answer=b;b='?'}level='Kathete';
+ }
+ return {type,a,b,c,answer,unknown,level,displayA:type==='leg'&&unknown==='a'?null:a,displayB:type==='leg'&&unknown==='b'?null:b};
+}
+function newQuestion(){current=generate();$('feedback').className='feedback';$('feedback').textContent='';$('hint').style.display='none';$('answer').value='';$('qnumber').textContent='AUFGABE '+(total+1);$('qtype').textContent=current.level.toUpperCase();$('questionText').textContent=current.type==='hyp'?`Die Katheten sind ${current.a} cm und ${current.b} cm lang. Wie lang ist die Hypotenuse c?`:`Die Hypotenuse ist ${current.c} cm lang. Eine Kathete ist ${current.unknown==='a'?current.b:current.a} cm lang. Berechne die fehlende Kathete.`;$('taskVisual').innerHTML=triangleSVG(current.displayA,current.displayB,current.c,current.unknown);}
+function checkAnswer(input,task,feedback){let val=parseFloat(input.value.trim().replace(',','.'));if(!Number.isFinite(val)){feedback.className='feedback bad';feedback.textContent='Bitte gib eine Zahl ein.';return}total++;let ok=Math.abs(val-task.answer)<.11;if(ok){correct++;points+=10;streak++;feedback.className='feedback good';feedback.textContent='Richtig! Sehr gut gerechnet. +10 Punkte';}else{streak=0;points=Math.max(0,points);feedback.className='feedback bad';feedback.textContent=`Noch nicht ganz. Die richtige Lösung ist ${fmt(task.answer)} cm. Schau dir die Formel noch einmal an.`;errors.push({text:$('questionText').textContent,answer:fmt(task.answer),task:task});renderReview()}updateStats();input.disabled=true;}
+$('checkBtn').onclick=()=>{if(current){checkAnswer($('answer'),current,$('feedback'))}};
+$('answer').addEventListener('keydown',e=>{if(e.key==='Enter')$('checkBtn').click()});
+$('nextBtn').onclick=()=>{$('answer').disabled=false;newQuestion()};
+$('hintBtn').onclick=()=>{$('hint').style.display='block';$('hint').textContent=current.type==='hyp'?'Tipp: Quadriere beide Katheten, addiere die Ergebnisse und ziehe dann die Quadratwurzel.':'Tipp: Ziehe das Quadrat der bekannten Kathete vom Quadrat der Hypotenuse ab. Danach die Quadratwurzel ziehen.'};
+document.querySelectorAll('#modes .chip').forEach(b=>b.onclick=()=>{document.querySelectorAll('#modes .chip').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');mode=b.dataset.mode;$('answer').disabled=false;newQuestion()});
+const words=[
+ {text:'Eine Leiter steht 6 m von einer Hauswand entfernt. Sie reicht 8 m hoch. Wie lang ist die Leiter?',a:6,b:8,c:10,answer:10,unit:'m',hint:'Die Leiter ist die Hypotenuse.'},
+ {text:'Ein rechteckiger Garten ist 9 m lang und 12 m breit. Wie lang ist die Diagonale?',a:9,b:12,c:15,answer:15,unit:'m',hint:'Die Diagonale ist die Hypotenuse.'},
+ {text:'Ein Drachen steigt an einer 13 m langen Schnur. Der Abstand am Boden beträgt 5 m. Wie hoch ist er?',a:5,b:12,c:13,answer:12,unit:'m',hint:'Die Schnur ist die Hypotenuse. Gesucht ist eine Kathete.'},
+ {text:'Ein Bildschirm ist 24 cm breit und 18 cm hoch. Wie gross ist seine Diagonale?',a:24,b:18,c:30,answer:30,unit:'cm',hint:'Die Bildschirmdiagonale ist die Hypotenuse.'},
+ {text:'Ein Weg führt 7 km nach Osten und 24 km nach Norden. Wie lang ist die direkte Verbindung?',a:7,b:24,c:25,answer:25,unit:'km',hint:'Die direkte Verbindung bildet die Hypotenuse.'},
+ {text:'Ein Baum ist durch ein Seil von 10 m Länge gesichert. Das Seil ist 6 m vom Baum entfernt befestigt. Wie hoch reicht es am Baum?',a:6,b:8,c:10,answer:8,unit:'m',hint:'Das Seil ist die Hypotenuse.'}
+];
+function newWord(){wordCurrent=words[wordIndex++%words.length];$('wordText').textContent=wordCurrent.text;$('wordVisual').innerHTML=triangleSVG(wordCurrent.a,wordCurrent.b,wordCurrent.c,'c');$('wordUnit').textContent=wordCurrent.unit;$('wordAnswer').value='';$('wordAnswer').disabled=false;$('wordFeedback').className='feedback';$('wordFeedback').textContent='';$('wNumber').textContent='TEXTAUFGABE '+wordIndex;}
+$('wordNext').onclick=newWord;
+$('wordCheck').onclick=()=>{let v=parseFloat($('wordAnswer').value.replace(',','.'));let f=$('wordFeedback');if(!Number.isFinite(v)){f.className='feedback bad';f.textContent='Bitte gib eine Zahl ein.';return}if(Math.abs(v-wordCurrent.answer)<.11){f.className='feedback good';f.textContent='Genau! Die Lösung stimmt. +10 Punkte';points+=10;correct++;streak++;}else{f.className='feedback bad';f.textContent=`Noch nicht richtig. Die Lösung ist ${fmt(wordCurrent.answer)} ${wordCurrent.unit}. Tipp: ${wordCurrent.hint}`;streak=0;errors.push({text:wordCurrent.text,answer:fmt(wordCurrent.answer)+' '+wordCurrent.unit});renderReview()}$('wordAnswer').disabled=true;updateStats()};
+function renderReview(){let el=$('reviewContent');if(!errors.length){el.innerHTML='<p class="muted">Noch keine Fehler gesammelt. Weiter so!</p>';return}el.innerHTML='<div class="review-list">'+errors.slice().reverse().map((e,i)=>`<div class="review-item"><div><b>${e.text}</b><div class="muted" style="font-size:.86rem;margin-top:5px">Richtige Lösung: ${e.answer}</div></div><span style="color:var(--bad)">↻</span></div>`).join('')+'</div>'}
+$('retryBtn').onclick=()=>{if(!errors.length){showPage('practice');return}showPage('practice');$('answer').disabled=false;current=errors[errors.length-1].task||generate('all');$('questionText').textContent=errors[errors.length-1].text;$('qnumber').textContent='FEHLER WIEDERHOLEN';$('taskVisual').innerHTML=triangleSVG(current.displayA,current.displayB,current.c,current.unknown);$('feedback').className='feedback';$('answer').value='';};
+newQuestion();newWord();updateStats();
+</script>
+</body></html>
